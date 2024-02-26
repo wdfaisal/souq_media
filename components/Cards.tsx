@@ -18,7 +18,7 @@ function Card({title,text,url}:cardprops){
       <Image src={url} width={100} height={100} alt='logo'/>
       
 
-      <h2 className='font-bold text-2xl capitalize mt-5'>{title} </h2>
+      <h2 className=' text-3xl text-[#9E276A] mt-5'>{title} </h2>
       <p className=' font-sans text-lg text-center my-3 text-[#866B90] '>{text ? text : 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ad inventore explicabo dignissimos rerum consequuntur dolore debitis at. Corporis, magni? Nam.'}</p>
 
     </div>
@@ -29,9 +29,16 @@ function Cards() {
   return (
     <div className=''>
     <div className=' max-container-extra flex flex-col justify-between items-center py-10 lg:flex-row lg:h-[80vh] '>
-      <Card title='High Quality' text='The production of high quality that work well on desktop is responsive and adaptive design. , flaw-free projects fully meets all expectations.' url={awesome}/>
-      <Card title='High Quality' url={pixel}/>
-      <Card title='High Quality' url={hight_q}/>
+      <Card 
+        title='فكر كيف تبدأ ؟'
+        
+        url={awesome}
+      />
+      <Card 
+        title=' إبدء' 
+        url={pixel}
+       />
+      <Card title='وخلي الباقي علينا' url={hight_q}/>
       
     </div>
     </div>

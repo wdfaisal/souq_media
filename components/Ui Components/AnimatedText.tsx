@@ -2,6 +2,8 @@
 
 import React from 'react'
 import {motion} from 'framer-motion'
+import { IBM_Plex_Sans_Arabic } from 'next/font/google'
+import { cn } from "@/lib/utils"
 
   interface props{
   text:string
@@ -32,28 +34,23 @@ const singleword={
       duration:0.8
     }
   }
-
+  
 
 }
 function AnimatedText({text}:props) {
+
   return (
-    <div className=' w-full mx-auto flex items-center justify-center  self-center'>
+    <div className=' w-full flex items-center justify-center self-center'>
      <motion.h1 
-     className=' inline-block w-full my-2 font-bold text-4xl lg:text-5xl capitalize' 
+     className={"text-wrap w-full my-4 mr-0 font-bold tracking-tighter  text-5xl lg:text-7xl text-[#9E276A]" }
+      
      variants={quote}
      initial='initial'
      animate="animate"
      
      >
       {
-        text.split(' ').map((word,index) =>
-        <motion.span key={word+"-"+index} className=' inline-block'
-        variants={singleword}
-        >
-          {word}&nbsp;
-
-        </motion.span>
-        )
+        text
       }
       
     </motion.h1>

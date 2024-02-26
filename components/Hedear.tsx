@@ -2,9 +2,11 @@
 import React from 'react'
 import Link from 'next/link'
 import {useState}  from 'react';
-import { instagram,linkedin,logo,github_icon,menu2 } from '@/public/assets';
+import { instagram,linkedin,Souq_logo,github_icon,menu2 } from '@/public/assets';
+import CartDrawer from './CartDrawer';
 import Image from 'next/image';
 import {motion} from 'framer-motion'
+import NavMenu from './NavMenu';
 
 function Hedear() {
   const [isopen ,setisopen] = useState(false);
@@ -15,37 +17,43 @@ function Hedear() {
   }
   return (
     <>
-    <nav className='max-container w-full flex items-center justify-between pt-5 px-10 '>
-        <div className=' hidden sm:flex gap-5'>
-            <Link href="/" className=' cursor-pointer hover:text-[#334155] border-b-2 '>Home</Link>
-            <Link href="/" className=' cursor-pointer hover:text-[#334155]'>Projects</Link>
-            <Link href="#Experience" className=' cursor-pointer hover:text-[#334155]'>Experience</Link>
-            <Link href="/" className=' cursor-pointer hover:text-[#334155]'>About</Link>
-        </div>
+    <nav className='max-container lg:fixed border-b-2 z-50 w-full flex items-center justify-between pt-0 px-5  md:left-1/2 md:transform md:-translate-x-1/2  '>
 
-        {/*togelmenu button in mobile dev */}
-        <button onClick={openmenu}>
-          <Image className='sm:hidden' src={menu2} alt='logo' width={48} height={48}/>
+      <div className=" flex items-center lg:w-1/4">
+        <button className=' hover:scale-105'>
+        <Image className=' lg:w-52 ' src={Souq_logo} alt='logo' width={250} height={150}/>
         </button>
+      </div>
 
-        <div className=" sm:absolute left-1/2 top-3">
-          <button className=' hover:scale-105'>
-          <Image className='' src={logo} alt='logo' width={50} height={50}/>
-          </button>
+      
+  
+  <div className=' hidden md:flex'>
+  <NavMenu/>
+  </div>
+  
+        
+      <div className=' hidden lg:flex items-center justify-end w-1/4 gap-6'>
+        
+        <div>
+        <Link href="/" className=' cursor-pointer ml-3 hover:text-[#9E276A] text-sm text-[#9E276A]'>تسجيل</Link>
+        <button className=' border-2 border-[#9E276A] py-1 px-3 rounded-md hover:bg-[#151B20] hover:text-white' >تسجيل دخول</button>
         </div>
+        <CartDrawer/>
+      </div>
 
-        <div className='flex items-center gap-3'>
-        <Image src={instagram} alt='insgram' width={26} height={26}/>
-        <Image src={linkedin} alt='linkedin' width={26} height={26}/>
-        <Image src={github_icon} alt='linkedin' width={26} height={26}/>
-        <button className=' border-2 py-1 px-2 rounded-md hover:bg-[#151B20] hover:text-white' >Download CV</button>
-        </div>
+
+       {/*togelmenu button in mobile dev */}
+       <div className=' lg:hidden flex flex-row gap-2'>
+       <button onClick={openmenu} >
+        <Image className='' src={menu2} alt='logo' width={32} height={32}/>
+      </button>
+      <CartDrawer/>
+      </div>
+      
+
+       
         
     </nav>
-    <div className={' hidden w-full bg-black text-yellow-100 h-10 ml-2 mr-3 lg:hidden ${}'} >
-      home
-
-    </div>
     </>
   )
 }

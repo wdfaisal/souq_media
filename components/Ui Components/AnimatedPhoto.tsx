@@ -1,7 +1,7 @@
 "use client"
 
 import React from 'react'
-import { photo } from '@/public/assets'
+import hero_Photo from '@/public/assets/design.png'
 import Image from 'next/image'
 import {motion} from 'framer-motion'
 
@@ -15,8 +15,8 @@ function AnimatedPhoto() {
     <motion.div 
      initial = {{y:50 ,opacity:0}}
      animate = {{y:0,opacity:1, transition:{duration:0.5 ,}}}
-     className='sm:w-2/3 h-full'>
-        <Image src={photo} alt='photo' />
+     className='w-full h-full'>
+        <Image src={hero_Photo}  alt='photo' />
         
     </motion.div>
   )

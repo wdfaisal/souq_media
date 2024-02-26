@@ -19,6 +19,8 @@ import icon1 from './icon1.png'
 import icon2 from "./icon2.png"
 import  Certificate  from "./certificate.png"
 import back_3 from './object-6-1.png'
+import Souq_logo from "./Souq_media _logo.webp"
+import hero_photo from './hero_Photo.png'
 
 
 export {
@@ -42,6 +44,8 @@ meta_logo,
 icon1,
 icon2,
 Certificate,
-back_3
+back_3,
+Souq_logo,
+hero_photo
 
 }
